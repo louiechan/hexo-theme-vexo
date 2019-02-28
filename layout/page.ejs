@@ -61,6 +61,10 @@
       <!-- Disqus START -->
       <div id="disqus_thread"></div>
       <!-- Disqus END -->
+    <% } else if (theme.comment === 'valine'){ %>
+      <!-- Valine START -->
+      <div id ='vcomment'></div>
+      <!-- Valine END -->
     <% } else { %>
       <!-- No Comment -->
     <% } %>
@@ -177,3 +181,29 @@
     })();
   </script>
 <% } %>
+
+<% if (theme.comment === 'valine') { %>
+  <script>
+    var appKey = '<%= theme.valine_app_key %>';
+    var appId ='<%= theme.valine_app_id %>';
+    var isNotify = <%= theme.valine_notify %>; 
+    var isVerify = <%= theme.valine_verify %>; 
+    var placeholder ='<%= theme.valine_placeholder %>'; 
+    var avatar ='<%= theme.valine_avatar %>'; 
+    var pageSize ='<%= theme.valine_page_size %>'; 
+    var visitor = <%= theme.valine_visitor %>; 
+
+    new Valine({
+      el: '#vcomment' ,
+      appId: appId,
+      appKey: appKey,
+      notify: isNotify,
+      verify: isVerify ,
+      placeholder: placeholder,
+      avatar: avatar,
+      visitor: visitor,
+      pageSize: pageSize 
+  });
+  </script>
+<% } %>
+
