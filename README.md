@@ -1,3 +1,10 @@
+
+**For self usage**, fixing minor bugs, adding valine support as default comment system considering of gitment's security issue. [Demo](https://louiechan.github.io) here. 
+
+here is the previous README:
+
+-----
+
 # Vexo = Vue.js Style + Hexo 
 
 > Vexo is a Hexo theme inspired by [Vue.js](https://cn.vuejs.org) official website.
